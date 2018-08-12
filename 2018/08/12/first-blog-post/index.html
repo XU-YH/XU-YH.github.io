@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>first-blog-post | XU-YH&#39;s Blog | 欢迎来到我的博客 ! ^~^ !</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="study,markdown">
+    <meta name="description" content="前言这还是我刚接触hexo，很多都不懂，这是我的一次练习文章，掌握基本的markdown语法  配置文件命名规则和路由地址Hexo 默认以标题作为文件名称，可以通过 Hexo 的配置文件 _config.yml 中的 new_post_name 参数来改变默认的文件名称，例如：1new_post_name: :year-:month-:day-:title.md 当创建博客时，就会以这种格式生成M">
+<meta name="keywords" content="study,markdown">
+<meta property="og:type" content="article">
+<meta property="og:title" content="first-blog-post">
+<meta property="og:url" content="http://yoursite.com/2018/08/12/first-blog-post/index.html">
+<meta property="og:site_name" content="XU-YH&#39;s Blog">
+<meta property="og:description" content="前言这还是我刚接触hexo，很多都不懂，这是我的一次练习文章，掌握基本的markdown语法  配置文件命名规则和路由地址Hexo 默认以标题作为文件名称，可以通过 Hexo 的配置文件 _config.yml 中的 new_post_name 参数来改变默认的文件名称，例如：1new_post_name: :year-:month-:day-:title.md 当创建博客时，就会以这种格式生成M">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/avatar.jpg">
+<meta property="og:updated_time" content="2018-08-12T15:58:13.798Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="first-blog-post">
+<meta name="twitter:description" content="前言这还是我刚接触hexo，很多都不懂，这是我的一次练习文章，掌握基本的markdown语法  配置文件命名规则和路由地址Hexo 默认以标题作为文件名称，可以通过 Hexo 的配置文件 _config.yml 中的 new_post_name 参数来改变默认的文件名称，例如：1new_post_name: :year-:month-:day-:title.md 当创建博客时，就会以这种格式生成M">
+<meta name="twitter:image" content="http://yoursite.com/img/avatar.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="XU-YH&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">XU-YH</h5>
+          <a href="mailto:xuyinhui163@163.com" title="xuyinhui163@163.com" class="mail">xuyinhui163@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/XU-YH" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">first-blog-post</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">first-blog-post</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-12T15:55:40.000Z" itemprop="datePublished" class="page-time">
+  2018-08-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置文件命名规则和路由地址"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置文件命名规则和路由地址</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建博客文章"><span class="post-toc-number">3.</span> <span class="post-toc-text">创建博客文章</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#编写内容"><span class="post-toc-number">4.</span> <span class="post-toc-text">编写内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#标题"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">标题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#列表"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">列表</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#无序列表"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">无序列表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有序列表"><span class="post-toc-number">4.2.2.</span> <span class="post-toc-text">有序列表</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#斜体与粗体"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">斜体与粗体</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#超链接"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">超链接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表格"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">表格</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入图片"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">插入图片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#引用"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">引用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分割线"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">分割线</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结语"><span class="post-toc-number">5.</span> <span class="post-toc-text">结语</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-first-blog-post"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">first-blog-post</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-08-12 23:55:40" datetime="2018-08-12T15:55:40.000Z"  itemprop="datePublished">2018-08-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这还是我刚接触<code>hexo</code>，很多都不懂，这是我的一次练习文章，掌握基本的<code>markdown</code>语法</p>
+<hr>
+<h2 id="配置文件命名规则和路由地址"><a href="#配置文件命名规则和路由地址" class="headerlink" title="配置文件命名规则和路由地址"></a>配置文件命名规则和路由地址</h2><p>Hexo 默认以标题作为文件名称，可以通过 Hexo 的配置文件 _config.yml 中的 <code>new_post_name</code> 参数来改变默认的文件名称，例如：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new<span class="emphasis">_post_</span>name: :year-:month-:day-:title.md</span><br></pre></td></tr></table></figure></p>
+<p>当创建博客时，就会以这种格式生成Markdown文件，如这篇博客的文件名就生成 2018-08-12-first-blog-post.md 这种形式。其中相关变量说明如下表：<br>| 变量| 说明<br>| :-:| :-: |<br>|:title|标题（小写， 空格将会被替换为短杠）|<br>|:year|创建的年份，如：2018|<br>|:month|创建的月份（有前导零），如：01|<br>|:i_month|创建的月份（无前导零），如：1|<br>|:day|创建的日期（有前导零），如：09|<br>|:i_day|创建的月份（无前导零），如：9|<br>配置浏览器地址栏中的URL。同样在 Hexo 的配置文件<code>_config.yml</code>中, 配置 <code>permalink</code>属性 ，例如：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">permalink: /blog/:year/:month/:day/:title/</span><br></pre></td></tr></table></figure></p>
+<p>当在地址栏访问时，就会如下方式呈现出来：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://xu-yh.github.io/2018/08/12/first-blog-post/</span><br></pre></td></tr></table></figure></p>
+<h2 id="创建博客文章"><a href="#创建博客文章" class="headerlink" title="创建博客文章"></a>创建博客文章</h2><p>在命令行中用如下命令创建一篇新的文章<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">布局（layout）</th>
+<th style="text-align:center">存储路径</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">post</td>
+<td style="text-align:center">source/_posts</td>
+<td style="text-align:center">默认，可以直接发布</td>
+</tr>
+<tr>
+<td style="text-align:center">page</td>
+<td style="text-align:center">source</td>
+<td style="text-align:center">在source下新建一个文件夹</td>
+</tr>
+<tr>
+<td style="text-align:center">draft</td>
+<td style="text-align:center">source/_drafts</td>
+<td style="text-align:center">新建文件将保持到_drafts中</td>
+</tr>
+</tbody>
+</table>
+<p>可以用 <code>publish</code>命令将草稿移动到 <code>source/_posts</code>文件夹下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="编写内容"><a href="#编写内容" class="headerlink" title="编写内容"></a>编写内容</h2><p>打开<code>source/_posts</code> 文件夹下刚创建的 Markdown 文件，如：<code>/source/_posts/first-blog-post</code>你会发现有如下内容：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: first-blog-post</span><br><span class="line">date: 2018-08-12 21:06:50</span><br><span class="line">tags: </span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意</strong>，这里的<code>title</code>是可以随便改的，当然了 <code>date</code>也是可以改，不过没有改的必要；这里要说一下 <code>tags</code>这个属性，如果需要配置多个有两种方式：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tags: [tag1, tag2, tag3]</span><br></pre></td></tr></table></figure></p>
+<p>或者：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tags:</span><br><span class="line">  - tag1</span><br><span class="line">  - tag2</span><br><span class="line">  - tag3</span><br></pre></td></tr></table></figure></p>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>标题分为五级，依次字号变小<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><p><strong>写法：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>无序列表项1</span><br><span class="line"><span class="bullet">+ </span>无序列表项2</span><br><span class="line"><span class="bullet">- </span>无序列表项3</span><br></pre></td></tr></table></figure></p>
+<p><strong>效果：</strong></p>
+<ul>
+<li>无序列表项1</li>
+</ul>
+<ul>
+<li>无序列表项2</li>
+</ul>
+<ul>
+<li>无序列表项3</li>
+</ul>
+<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><p><strong>写法：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.有序列表项1</span><br><span class="line">2.有序列表项2</span><br><span class="line">3.有序列表项3</span><br></pre></td></tr></table></figure></p>
+<p><strong>效果：</strong><br>1.有序列表项1<br>2.有序列表项2<br>3.有序列表项3</p>
+<h3 id="斜体与粗体"><a href="#斜体与粗体" class="headerlink" title="斜体与粗体"></a>斜体与粗体</h3><p><strong>写法：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*这是斜体*</span> 或 <span class="emphasis">_这也是斜体_</span> </span><br><span class="line"><span class="strong">**这是粗体**</span></span><br><span class="line"><span class="strong">***这是加粗斜体**</span>*</span><br><span class="line">~~这是删除线~~</span><br></pre></td></tr></table></figure></p>
+<p><strong>效果：</strong><br><em>这是斜体</em> 或 <em>这也是斜体</em><br><strong>这是粗体</strong><br><strong><em>这是加粗斜体</em></strong><br><del>这是删除线</del></p>
+<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><p><strong>写法：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">行内形式：[<span class="string">我的博客</span>](<span class="link">https://xu-yh.github.io/</span>)</span><br><span class="line">参考形式：[<span class="string">我的博客</span>][<span class="symbol">1</span>]，[<span class="string">我的github</span>][<span class="symbol">2</span>]</span><br><span class="line">[<span class="symbol">1</span>]:<span class="link">https://xu-yh.github.io/</span></span><br><span class="line">[<span class="symbol">2</span>]:<span class="link">https://github.com/XU-YH</span></span><br><span class="line">自动链接：我的博客地址&lt;https://xu-yh.github.io/&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>效果：</strong><br>行内形式：<a href="https://xu-yh.github.io/" target="_blank" rel="noopener">我的博客</a><br>参考形式：[我的博客][1]，[我的github][2]<br>[1]:<a href="https://xu-yh.github.io/" target="_blank" rel="noopener">https://xu-yh.github.io/</a><br>[2]:<a href="https://github.com/XU-YH" target="_blank" rel="noopener">https://github.com/XU-YH</a><br>自动链接：我的博客地址<a href="https://xu-yh.github.io/" target="_blank" rel="noopener">https://xu-yh.github.io/</a></p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p><strong>写法：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| 表头1|表头2|表头3|表头4</span><br><span class="line">|-| :- | :-: | -: |</span><br><span class="line">|默认左对齐|左对齐|居中对其|右对齐|</span><br><span class="line">|默认左对齐|左对齐|居中对其|右对齐|</span><br><span class="line">|默认左对齐|左对齐|居中对其|右对齐|</span><br></pre></td></tr></table></figure></p>
+<p><strong>效果：</strong><br>| 表头1|表头2|表头3|表头4<br>|-| :- | :-: | -: |<br>|默认左对齐|左对齐|居中对其|右对齐|<br>|默认左对齐|左对齐|居中对其|右对齐|<br>|默认左对齐|左对齐|居中对其|右对齐|</p>
+<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><p><strong>写法：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![](/images/insert_image.jpg)</span><br><span class="line">这里的地址可以使本地地址，也可以是图片网址</span><br></pre></td></tr></table></figure></p>
+<p><strong>效果：</strong><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/avatar.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p><strong>写法：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 这是引用</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>效果：</strong></p>
+<blockquote>
+<p>这是引用</p>
+</blockquote>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p><strong>写法：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="emphasis">***</span></span><br><span class="line">三个-或*</span><br></pre></td></tr></table></figure></p>
+<p><strong>效果：</strong></p>
+<hr>
+<hr>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><ul>
+<li>这篇文章写了有两个多小时了，结果是值得的，从网上摘抄过来的知识，自己整理出来，收获很多，掌握了markdown的基本语法，下次写文章会轻松很多吧！</li>
+</ul>
+<ul>
+<li>文章第一条<strong>配置文件命名规则和路由地址</strong>，我发现在我新建博客文章时，我之前并没有修改配置文件，上传部署后，也能达到同样的效果，也许新的版本内置了这个功能，有知道希望在下方留言教教我。</li>
+</ul>
+<hr>
+<p>参考文章地址：</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/56d99a3049a5" target="_blank" rel="noopener">如何写一篇hexo博客</a> </li>
+<li><a href="https://www.jianshu.com/p/3c7ddd48bfa9" target="_blank" rel="noopener">用Hexo写出第一篇博客</a></li>
+</ul>
+<hr>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-08-12T15:58:13.798Z" itemprop="dateUpdated">2018-08-12 23:58:13</time>
+</span><br>
+
+
+        
+        如果发现什么问题错误或者不合理的地方，欢迎在下方给我留言  <br>转载请注明：<a href="/2018/08/12/first-blog-post/" target="_blank" rel="external">http://yoursite.com/2018/08/12/first-blog-post/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="XU-YH">
+            XU-YH
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/study/">study</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/12/first-blog-post/&title=《first-blog-post》 — XU-YH's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/12/first-blog-post/&title=《first-blog-post》 — XU-YH's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/12/first-blog-post/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《first-blog-post》 — XU-YH's Blog&url=http://yoursite.com/2018/08/12/first-blog-post/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/12/first-blog-post/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/08/11/hello-world/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Hello World</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ������City�氲װ���� -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zODgxNS8xNTM0Mw==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> Ϊ����ʹ�����������۹����뼤��JavaScript</noscript>
+</div>
+<!-- City�氲װ��������� -->
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        我要吃辣条~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>XU-YH &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/12/first-blog-post/&title=《first-blog-post》 — XU-YH's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/12/first-blog-post/&title=《first-blog-post》 — XU-YH's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/12/first-blog-post/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《first-blog-post》 — XU-YH's Blog&url=http://yoursite.com/2018/08/12/first-blog-post/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/12/first-blog-post/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/08/12/first-blog-post/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'XU-YH的博客';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
