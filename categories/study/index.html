@@ -17,7 +17,7 @@
     <title>Categories: study | XU-YH&#39;s Blog | 欢迎来到我的博客 ! ^~^ !</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="theme-color" content="#3F51B5">
+    <meta name="theme-color" content="#FF5722">
     
     
     <meta name="keywords" content="">
@@ -127,6 +127,10 @@
             </a>
         </div>
         
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -239,9 +243,55 @@
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/categories/study/&title=XU-YH's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/categories/study/&title=XU-YH's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/categories/study/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=XU-YH's Blog&url=http://yoursite.com/categories/study/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/categories/study/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxUlEQVR42u3aS27DMAwFwN7/0u4mu8AOH0XLCTBaBXUajbwg+NHfX3kdb+v9aeV/z/4yvHBxcZe5x+V6B51tk25/doDrV4OLi7uTm/5c5cDXR22+Alxc3K/k1jOQs9+vfAcXF/dXuL3NcHFxf5dbSVOuw1mvXXJjrYaLi7vA7bUwZj/f0t/FxcVtcY/Wqpc9Uzu+fhMXF3cLNw06K2lQ/fsfSiNcXNybufXtewerh7nSFQ1cXNyHuGlDsz56SUNhcDsMFxd3lNtLTdKCJz3ShwYKLi7uo9ypQmglFMbRFxcXd4ibjjnT6xQryU3wjnFxcYe49WFJ7yJFr2aJ74ng4uKOcqfCWbzNwsUOXFzcZ7lTd6XS4qcZyHBxcYe49YsU9e17qVJpF1xc3C3cqVZm2uZId8TFxd3JHQgrCweoB8rXZ1xc3C3ctMGRljpp8VNqnuLi4t7MPcK1PmRdCZe4uLh7uOnAoz5iSQe3wT0RXFzcLdw0ZUmfpqPZUkaGi4u7hZsGmnoqszK+DR7g4uI+xO21S6aGK7i4uN/JXb8lVQ98zVErLi7uKHeq+OlRgjEMLi7uFm6aV9TbH70BTJz04OLiTnL/AV+gtHtqP9pbAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>
