@@ -20,9 +20,9 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="study,markdown">
+    <meta name="keywords" content="markdown">
     <meta name="description" content="前言这还是我刚接触hexo，很多都不懂，这是我的一次练习文章，掌握基本的markdown语法  配置文件命名规则和路由地址Hexo 默认以标题作为文件名称，可以通过 Hexo 的配置文件 _config.yml 中的 new_post_name 参数来改变默认的文件名称，例如：1new_post_name: :year-:month-:day-:title.md 当创建博客时，就会以这种格式生成M">
-<meta name="keywords" content="study,markdown">
+<meta name="keywords" content="markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="markdown的基本语法">
 <meta property="og:url" content="http://yoursite.com/2018/08/12/first-blog-post/index.html">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="前言这还是我刚接触hexo，很多都不懂，这是我的一次练习文章，掌握基本的markdown语法  配置文件命名规则和路由地址Hexo 默认以标题作为文件名称，可以通过 Hexo 的配置文件 _config.yml 中的 new_post_name 参数来改变默认的文件名称，例如：1new_post_name: :year-:month-:day-:title.md 当创建博客时，就会以这种格式生成M">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/img/favicon.ico">
-<meta property="og:updated_time" content="2018-08-18T06:31:23.186Z">
+<meta property="og:updated_time" content="2018-08-18T07:05:18.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="markdown的基本语法">
 <meta name="twitter:description" content="前言这还是我刚接触hexo，很多都不懂，这是我的一次练习文章，掌握基本的markdown语法  配置文件命名规则和路由地址Hexo 默认以标题作为文件名称，可以通过 Hexo 的配置文件 _config.yml 中的 new_post_name 参数来改变默认的文件名称，例如：1new_post_name: :year-:month-:day-:title.md 当创建博客时，就会以这种格式生成M">
@@ -128,7 +128,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -194,7 +194,42 @@
             <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这还是我刚接触<code>hexo</code>，很多都不懂，这是我的一次练习文章，掌握基本的<code>markdown</code>语法</p>
 <hr>
 <h2 id="配置文件命名规则和路由地址"><a href="#配置文件命名规则和路由地址" class="headerlink" title="配置文件命名规则和路由地址"></a>配置文件命名规则和路由地址</h2><p>Hexo 默认以标题作为文件名称，可以通过 Hexo 的配置文件 _config.yml 中的 <code>new_post_name</code> 参数来改变默认的文件名称，例如：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new<span class="emphasis">_post_</span>name: :year-:month-:day-:title.md</span><br></pre></td></tr></table></figure></p>
-<p>当创建博客时，就会以这种格式生成Markdown文件，如这篇博客的文件名就生成 <code>2018-08-12-first-blog-post.md</code>这种形式。其中相关变量说明如下表：<br>| 变量 | 说明<br>| :—-: | :—————————–: |<br>| :title | 标题（小写， 空格将会被替换为短杠）|<br>| :year | 创建的年份，如：2018|<br>| :month | 创建的月份（有前导零），如：01 |<br>| :i_month | 创建的月份（无前导零），如：1 |<br>| :day | 创建的日期（有前导零），如：09 |<br>| :i_day | 创建的月份（无前导零），如：9 |<br>配置浏览器地址栏中的URL。同样在 Hexo 的配置文件<code>_config.yml</code>中, 配置 <code>permalink</code>属性 ，例如：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">permalink: /blog/:year/:month/:day/:title/</span><br></pre></td></tr></table></figure></p>
+<p>当创建博客时，就会以这种格式生成Markdown文件，如这篇博客的文件名就生成 <code>2018-08-12-first-blog-post.md</code>这种形式。其中相关变量说明如下表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变量</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:title</td>
+<td style="text-align:center">标题（小写， 空格将会被替换为短杠）</td>
+</tr>
+<tr>
+<td style="text-align:center">:year</td>
+<td style="text-align:center">创建的年份，如：2018</td>
+</tr>
+<tr>
+<td style="text-align:center">:month</td>
+<td style="text-align:center">创建的月份（有前导零），如：01</td>
+</tr>
+<tr>
+<td style="text-align:center">:i_month</td>
+<td style="text-align:center">创建的月份（无前导零），如：1</td>
+</tr>
+<tr>
+<td style="text-align:center">:day</td>
+<td style="text-align:center">创建的日期（有前导零），如：09</td>
+</tr>
+<tr>
+<td style="text-align:center">:i_day</td>
+<td style="text-align:center">创建的月份（无前导零），如：9</td>
+</tr>
+</tbody>
+</table>
+<p>配置浏览器地址栏中的URL。同样在 Hexo 的配置文件<code>_config.yml</code>中, 配置 <code>permalink</code>属性 ，例如：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">permalink: /blog/:year/:month/:day/:title/</span><br></pre></td></tr></table></figure></p>
 <p>当在地址栏访问时，就会如下方式呈现出来：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://xu-yh.github.io/2018/08/12/first-blog-post/</span><br></pre></td></tr></table></figure></p>
 <h2 id="创建博客文章"><a href="#创建博客文章" class="headerlink" title="创建博客文章"></a>创建博客文章</h2><p>在命令行中用如下命令创建一篇新的文章<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure></p>
 <table>
@@ -246,7 +281,37 @@
 <h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><p><strong>写法：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">行内形式：[<span class="string">我的博客</span>](<span class="link">https://xu-yh.github.io/</span>)</span><br><span class="line">参考形式：[<span class="string">我的博客</span>][<span class="symbol">1</span>]，[<span class="string">我的github</span>][<span class="symbol">2</span>]</span><br><span class="line">[<span class="symbol">1</span>]:<span class="link">https://xu-yh.github.io/</span></span><br><span class="line">[<span class="symbol">2</span>]:<span class="link">https://github.com/XU-YH</span></span><br><span class="line">自动链接：我的博客地址&lt;https://xu-yh.github.io/&gt;</span><br></pre></td></tr></table></figure></p>
 <p><strong>效果：</strong><br>行内形式：<a href="https://xu-yh.github.io/" target="_blank" rel="noopener">我的博客</a><br>参考形式：[我的博客][1]，[我的github][2]<br>[1]:<a href="https://xu-yh.github.io/" target="_blank" rel="noopener">https://xu-yh.github.io/</a><br>[2]:<a href="https://github.com/XU-YH" target="_blank" rel="noopener">https://github.com/XU-YH</a><br>自动链接：我的博客地址<a href="https://xu-yh.github.io/" target="_blank" rel="noopener">https://xu-yh.github.io/</a></p>
 <h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p><strong>写法：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| 表头1| 表头2| 表头3| 表头4</span><br><span class="line">| -| :- | :-: | -: |</span><br><span class="line">| 默认左对齐| 左对齐| 居中对其| 右对齐|</span><br><span class="line">| 默认左对齐| 左对齐| 居中对其| 右对齐|</span><br><span class="line">| 默认左对齐| 左对齐| 居中对其| 右对齐|</span><br></pre></td></tr></table></figure></p>
-<p><strong>效果：</strong><br>| 表头1| 表头2| 表头3| 表头4<br>| ———| :— | :—–: | —: |<br>| 默认左对齐| 左对齐| 居中对其| 右对齐|<br>| 默认左对齐| 左对齐| 居中对其| 右对齐|<br>| 默认左对齐| 左对齐| 居中对其| 右对齐|</p>
+<p><strong>效果：</strong></p>
+<table>
+<thead>
+<tr>
+<th>表头1</th>
+<th style="text-align:left">表头2</th>
+<th style="text-align:center">表头3</th>
+<th style="text-align:right">表头4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>默认左对齐</td>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中对其</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+<tr>
+<td>默认左对齐</td>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中对其</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+<tr>
+<td>默认左对齐</td>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中对其</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+</tbody>
+</table>
 <h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><p><strong>写法：</strong><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![](/images/insert_image.jpg)</span><br><span class="line">这里的地址可以使本地地址，也可以是图片网址</span><br></pre></td></tr></table></figure></p>
 <p><strong>效果：</strong><br><figure class="image-bubble">
                 <div class="img-lightbox">
@@ -285,7 +350,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-08-18T06:31:23.186Z" itemprop="dateUpdated">2018-08-18 14:31:23</time>
+    最終更新：<time datetime="2018-08-18T07:05:18.265Z" itemprop="dateUpdated">2018-08-18 15:05:18</time>
 </span><br>
 
 
@@ -311,7 +376,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/study/">study</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
 
 
             
@@ -424,7 +489,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
         </p>
     </div>
     <div class="bottom">
