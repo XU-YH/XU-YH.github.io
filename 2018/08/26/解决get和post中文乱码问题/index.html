@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="XU-YH&#39;s Blog">
 <meta property="og:description" content="乱码原因对于国内的程序员来说，在做项目时避免不了的问题是中文乱码问题。Tomcat7及其以下版本对URI默认编码是ISO-8859-1，这种编码方式以单个字节作为一个字符，而汉字是以两个字节表示一个字符的。Tomcat8及其以上版本对URI默认编码是UTF-8，所以get请求和post请求解决中文乱码文题的方法有所不同。 get请求参数中文乱码解决办法如果是Tomcat8及其以上版本，无需解决ge">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-26T14:51:18.183Z">
+<meta property="og:updated_time" content="2018-08-26T15:01:59.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决Tomcat中get请求和post请求中文乱码问题">
 <meta name="twitter:description" content="乱码原因对于国内的程序员来说，在做项目时避免不了的问题是中文乱码问题。Tomcat7及其以下版本对URI默认编码是ISO-8859-1，这种编码方式以单个字节作为一个字符，而汉字是以两个字节表示一个字符的。Tomcat8及其以上版本对URI默认编码是UTF-8，所以get请求和post请求解决中文乱码文题的方法有所不同。 get请求参数中文乱码解决办法如果是Tomcat8及其以上版本，无需解决ge">
@@ -217,6 +217,13 @@ name = new String(name.getBytes(&quot;iso-8859-1&quot;),&quot;utf-8&quot;);
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest req, ServletResponse resp, FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">		</span><br><span class="line">		HttpServletRequest request = (HttpServletRequest) req;</span><br><span class="line">		HttpServletResponse response = (HttpServletResponse) resp;</span><br><span class="line">		</span><br><span class="line">		MyRequest myRrequest = <span class="keyword">new</span> MyRequest(request);</span><br><span class="line">		</span><br><span class="line">		chain.doFilter(myRrequest, response);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>使用过滤器后，这样在用<code>servlet</code>接受浏览器传过来的数据时，就不用考虑乱码的问题，过滤器已经帮我们解决了。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上得知，<strong>尽量使用Tomcat8及其以上Tomcat服务器进行开发学习</strong>，这样就不用担心get请求参数中文乱码问题，post请求只要写一句<code>request.setCharacterEncoding(&quot;utf-8&quot;);</code>就够了，使用<code>spring</code>框架后也只需要在配置文件中加一个过滤器。</p>
+<hr>
+<p>参考文章地址：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/cdf-opensource-007/p/6337448.html" target="_blank" rel="noopener">详解get请求和post请求参数中文乱码的解决办法</a> </li>
+<li><a href="https://blog.csdn.net/hyn150/article/details/70245494" target="_blank" rel="noopener">过滤器解决get和post方式提交的中文乱码</a></li>
+</ul>
+<hr>
 
         </div>
 
@@ -225,7 +232,7 @@ name = new String(name.getBytes(&quot;iso-8859-1&quot;),&quot;utf-8&quot;);
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-08-26T14:51:18.183Z" itemprop="dateUpdated">2018-08-26 22:51:18</time>
+    最后更新时间：<time datetime="2018-08-26T15:01:59.098Z" itemprop="dateUpdated">2018-08-26 23:01:59</time>
 </span><br>
 
 
