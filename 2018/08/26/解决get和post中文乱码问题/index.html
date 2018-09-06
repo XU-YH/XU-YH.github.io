@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="XU-YH&#39;s Blog">
 <meta property="og:description" content="乱码原因对于国内的程序员来说，在做项目时避免不了的问题是中文乱码问题。Tomcat7及其以下版本对URI默认编码是ISO-8859-1，这种编码方式以单个字节作为一个字符，而汉字是以两个字节表示一个字符的。Tomcat8及其以上版本对URI默认编码是UTF-8，所以get请求和post请求解决中文乱码文题的方法有所不同。 get请求参数中文乱码解决办法如果是Tomcat8及其以上版本，无需解决ge">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-26T15:01:59.098Z">
+<meta property="og:updated_time" content="2018-09-06T13:01:46.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决Tomcat中get请求和post请求中文乱码问题">
 <meta name="twitter:description" content="乱码原因对于国内的程序员来说，在做项目时避免不了的问题是中文乱码问题。Tomcat7及其以下版本对URI默认编码是ISO-8859-1，这种编码方式以单个字节作为一个字符，而汉字是以两个字节表示一个字符的。Tomcat8及其以上版本对URI默认编码是UTF-8，所以get请求和post请求解决中文乱码文题的方法有所不同。 get请求参数中文乱码解决办法如果是Tomcat8及其以上版本，无需解决ge">
@@ -205,7 +205,7 @@ name = new String(name.getBytes(&quot;iso-8859-1&quot;),&quot;utf-8&quot;);
 </code></pre><h2 id="post请求参数中文乱码解决办法"><a href="#post请求参数中文乱码解决办法" class="headerlink" title="post请求参数中文乱码解决办法"></a>post请求参数中文乱码解决办法</h2><p>对于post请求，参数在请求体中</p>
 <p>如果是在<code>servlet</code>中，在获取参数前添加上下面这条语句即可</p>
 <pre><code>request.setCharacterEncoding(&quot;UTF-8&quot;);
-</code></pre><p>如果使用<code>spring</code>进行开发，在<code>spring</code>的配置文件中添加解决乱码过滤器</p>
+</code></pre><p>如果使用<code>spring</code>进行开发，在<code>web.xml</code>中添加解决乱码过滤器</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;description&gt;字符集过滤器&lt;/description&gt;</span><br><span class="line">	&lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">　　　　　&lt;filter-<span class="class"><span class="keyword">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">filter</span>.<span class="title">CharacterEncodingFilter</span>&lt;/<span class="title">filter</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">　　　　　&lt;<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">　　　　　&lt;<span class="title">description</span>&gt;字符集编码&lt;/<span class="title">description</span>&gt;</span></span><br><span class="line"><span class="class">　　　　　&lt;<span class="title">param</span>-<span class="title">name</span>&gt;<span class="title">encoding</span>&lt;/<span class="title">param</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">		&lt;<span class="title">param</span>-<span class="title">value</span>&gt;<span class="title">UTF</span>-8&lt;/<span class="title">param</span>-<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="class">　　　　　&lt;/<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">	&lt;<span class="title">filter</span>-<span class="title">name</span>&gt;<span class="title">encodingFilter</span>&lt;/<span class="title">filter</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">	// 对所有资源进行过滤，解决<span class="title">post</span>请求中文乱码</span></span><br><span class="line"><span class="class">	&lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/*&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="过滤器解决get和post请求参数中文乱码"><a href="#过滤器解决get和post请求参数中文乱码" class="headerlink" title="过滤器解决get和post请求参数中文乱码"></a>过滤器解决get和post请求参数中文乱码</h2><p>使用<code>servlet</code>开发，如果使用上面的方法,每个<code>servlet</code>中都要进行设置编码，如果是post请求还好，但是如果是get请求,每个请求参数都要要手动进行转码，相当麻烦。</p>
 <p> 平常在servlet中接受请求的数据时可以使用<code>request.getParameter(name)</code>或者<code>request.getParameterValues(name)</code>进行获取，但这些方法如果不进行编码设置时，得到的数据都是乱码，这是因为浏览器传过来的数据的编码格式是iso-8859-1,而我们的开发平台一般都是使用的是utf-8，所以就会出现乱码现象。</p>
@@ -232,12 +232,12 @@ name = new String(name.getBytes(&quot;iso-8859-1&quot;),&quot;utf-8&quot;);
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-08-26T15:01:59.098Z" itemprop="dateUpdated">2018-08-26 23:01:59</time>
+    最后更新时间：<time datetime="2018-09-06T13:01:46.889Z" itemprop="dateUpdated">2018-09-06 21:01:46</time>
 </span><br>
 
 
         
-        如果发现什么问题错误或者不合理的地方，欢迎在下方给我留言  <br>转载请注明：<a href="/2018/08/26/解决get和post中文乱码问题/" target="_blank" rel="external">https://xu-yh.github.io/2018/08/26/解决get和post中文乱码问题/</a>
+        如果发现什么问题错误或者不合理的地方，欢迎在下方给我留言  <br>转载请注明：<a href="/2018/08/26/解决get和post中文乱码问题/" target="_blank" rel="external">/2018/08/26/解决get和post中文乱码问题/</a>
         
     </div>
     
@@ -268,7 +268,14 @@ name = new String(name.getBytes(&quot;iso-8859-1&quot;),&quot;utf-8&quot;);
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/09/06/解决ajax跨域请求问题/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">解决ajax跨域请求问题</h4>
+      </a>
+    </div>
   
 
   
