@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="XU-YH&#39;s Blog">
 <meta property="og:description" content="什么是跨域问题&amp;emsp;&amp;emsp;跨域问题来源于JavaScript的同源策略（same-origin policy），即只有 协议+主机名+端口号 (如存在)相同，则允许相互访问。也就是说JavaScript只能访问和操作自己域下的资源，不能访问和操作其他域下的资源，同源策略用于保证用户信息安全，防止恶意的网站窃取数据。跨域问题是针对JS和ajax的，html本身没有跨域问题，比如a标签、s">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-06T14:20:47.438Z">
+<meta property="og:updated_time" content="2018-09-06T14:33:12.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决ajax跨域请求问题">
 <meta name="twitter:description" content="什么是跨域问题&amp;emsp;&amp;emsp;跨域问题来源于JavaScript的同源策略（same-origin policy），即只有 协议+主机名+端口号 (如存在)相同，则允许相互访问。也就是说JavaScript只能访问和操作自己域下的资源，不能访问和操作其他域下的资源，同源策略用于保证用户信息安全，防止恶意的网站窃取数据。跨域问题是针对JS和ajax的，html本身没有跨域问题，比如a标签、s">
@@ -189,7 +189,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="什么是跨域问题"><a href="#什么是跨域问题" class="headerlink" title="什么是跨域问题"></a>什么是跨域问题</h2><p>&emsp;&emsp;跨域问题来源于JavaScript的同源策略（same-origin policy），即只有 <strong>协议</strong>+<strong>主机名</strong>+<strong>端口号</strong> (如存在)相同，则允许相互访问。也就是说JavaScript只能访问和操作自己域下的资源，不能访问和操作其他域下的资源，同源策略用于保证用户信息安全，防止恶意的网站窃取数据。跨域问题是针对JS和ajax的，html本身没有跨域问题，比如a标签、script标签、甚至form标签（可以直接跨域发送数据并接收数据）等 。<br>&emsp;&emsp;下面举几个例子：</p>
+            <h2 id="什么是跨域问题"><a href="#什么是跨域问题" class="headerlink" title="什么是跨域问题"></a>什么是跨域问题</h2><p>&emsp;&emsp;跨域问题来源于<code>JavaScript</code>的同源策略（same-origin policy），即只有 <strong>协议</strong>+<strong>主机名</strong>+<strong>端口号</strong> (如存在)相同，则允许相互访问。也就是说<code>JavaScript</code>只能访问和操作自己域下的资源，不能访问和操作其他域下的资源，同源策略用于保证用户信息安全，防止恶意的网站窃取数据。跨域问题是针对<code>JS</code>和<code>ajax</code>的，<code>html</code>本身没有跨域问题，比如<code>a</code>标签、<code>script</code>标签、甚至<code>form</code>标签（可以直接跨域发送数据并接收数据）等 。<br>&emsp;&emsp;下面举几个例子：</p>
 <figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http://www.123.com/index.html 调用 http://www.123.com/server.php （非跨域）</span><br><span class="line">http://www.123.com/index.html 调用 http://www.456.com/server.php （主域名不同:123/456，跨域）</span><br><span class="line">http://abc.123.com/index.html 调用 http://def.123.com/server.php （子域名不同:abc/def，跨域）</span><br><span class="line">http://www.123.com:8080/index.html 调用 http://www.123.com:8081/server.php （端口不同:8080/8081，跨域）</span><br><span class="line">http://www.123.com/index.html 调用 https://www.123.com/server.php （协议不同:http/https，跨域）</span><br></pre></td></tr></table></figure>
 <p><strong>注意：</strong>localhost和127.0.0.1虽然都指向本机，但也属于跨域，主机名不同。</p>
 <h2 id="解决ajax跨域问题的三种方法"><a href="#解决ajax跨域问题的三种方法" class="headerlink" title="解决ajax跨域问题的三种方法"></a>解决ajax跨域问题的三种方法</h2><h3 id="方法一：XHR2"><a href="#方法一：XHR2" class="headerlink" title="方法一：XHR2"></a>方法一：XHR2</h3><p>&emsp;&emsp;此种方法是<strong>HTML5</strong>的新功能，对<code>post</code>请求和<code>get</code>请求都有用，博主就是使用此种方法解决了跨域问题，在服务器端添加：</p>
@@ -209,12 +209,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-06T14:20:47.438Z" itemprop="dateUpdated">2018-09-06 22:20:47</time>
+    最后更新时间：<time datetime="2018-09-06T14:33:12.165Z" itemprop="dateUpdated">2018-09-06 22:33:12</time>
 </span><br>
 
 
         
-        如果发现什么问题错误或者不合理的地方，欢迎在下方给我留言  <br>转载请注明：<a href="/2018/09/06/解决ajax跨域请求问题/" target="_blank" rel="external">/2018/09/06/解决ajax跨域请求问题/</a>
+        如果发现什么问题错误或者不合理的地方，欢迎在下方给我留言  <br>转载请注明：<a href="/2018/09/06/解决ajax跨域请求问题/" target="_blank" rel="external">http://blog.xuyinhui.com/2018/09/06/解决ajax跨域请求问题/</a>
         
     </div>
     
