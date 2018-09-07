@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xu-yh.github.io/"/>
-  <updated>2018-09-06T14:33:12.165Z</updated>
+  <updated>2018-09-07T12:37:50.381Z</updated>
   <id>https://xu-yh.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用七牛云存储搭建图床</title>
+    <link href="https://xu-yh.github.io/2018/09/07/%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%AD%98%E5%82%A8%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
+    <id>https://xu-yh.github.io/2018/09/07/使用七牛云存储搭建图床/</id>
+    <published>2018-09-07T08:22:47.000Z</published>
+    <updated>2018-09-07T12:37:50.381Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="为什么需要图床"><a href="#为什么需要图床" class="headerlink" title="为什么需要图床"></a>为什么需要图床</h2><p>&emsp;&emsp;使用<code>markdown</code>写文章，注重的是文章的文字和排版，但是有时难免会用到图片，如果是别的站点的图片，可能源站点设置图片的防盗链，而且源站点删除了图片，自己就遭殃了，如果是自己的图片，上传到自己购买的服务器上，还不如第三方图床，速度和功能上第三方都进行过升级优化。</p><h2 id="七牛云"><a href="#七牛云" class="headerlink" title="七牛云"></a>七牛云</h2><p>&emsp;&emsp;七牛云官方地址：<a href="https://portal.qiniu.com" target="_blank" rel="noopener">https://portal.qiniu.com</a><br>&emsp;&emsp;官网注册认证后有10G永久免费空间，每月10G国内和10G国外流量，速度相当快，七牛云时国内专业CDN服务商，插件支持比较多，图片上传无限制。</p><h2 id="搭建图床"><a href="#搭建图床" class="headerlink" title="搭建图床"></a>搭建图床</h2><p>&emsp;&emsp;注册实名认证后，前往主页，进入对象存储，完成下面步骤</p><h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://image.xuyinhui.com/18-9-7/72777135.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://image.xuyinhui.com/18-9-7/75532150.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://image.xuyinhui.com/18-9-7/22820629.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://image.xuyinhui.com/18-9-7/97337815.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h3 id="复制外链"><a href="#复制外链" class="headerlink" title="复制外链"></a>复制外链</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://image.xuyinhui.com/18-9-7/12187724.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>&emsp;&emsp;得到的外链粘贴到浏览器的地址栏，可以直接获取到图片</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://image.xuyinhui.com/18-9-7/5180497.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>&emsp;&emsp;这样就可以在<code>md</code>文章上插入图片了</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](图片外链)</span><br></pre></td></tr></table></figure><h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><p>&emsp;&emsp;新建存储空间七牛云提供一个测试域名，测试域名自创建起 30 个自然日后系统会自动回收，所以需要绑定一个自己的域名。长久之计。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://image.xuyinhui.com/18-9-7/76826539.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><p>&emsp;&emsp;推荐绑定二级域名，配置域名解析CNAME，按指示走。博主配置的二级域名<code>image.XXX.com</code></p><h2 id="极简图床"><a href="#极简图床" class="headerlink" title="极简图床"></a>极简图床</h2><p>&emsp;&emsp;七牛云上传文件，一个一个的上传有点麻烦，在这里推荐使用<a href="http://jiantuku.com" target="_blank" rel="noopener">极简图床</a></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://image.xuyinhui.com/18-9-7/4923001.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;为什么需要图床&quot;&gt;&lt;a href=&quot;#为什么需要图床&quot; class=&quot;headerlink&quot; title=&quot;为什么需要图床&quot;&gt;&lt;/a&gt;为什么需要图床&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;使用&lt;code&gt;markdown&lt;/code&gt;写文章，注重的是文章的文字和排
+      
+    
+    </summary>
+    
+      <category term="study" scheme="https://xu-yh.github.io/categories/study/"/>
+    
+    
+      <category term="markdown" scheme="https://xu-yh.github.io/tags/markdown/"/>
+    
+      <category term="图床" scheme="https://xu-yh.github.io/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>解决ajax跨域请求问题</title>
