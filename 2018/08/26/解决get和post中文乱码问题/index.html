@@ -25,7 +25,7 @@
 <meta name="keywords" content="java,tomcat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决Tomcat中get请求和post请求中文乱码问题">
-<meta property="og:url" content="https://xu-yh.github.io/2018/08/26/解决get和post中文乱码问题/index.html">
+<meta property="og:url" content="http://blog.xuyinhui.com/2018/08/26/解决get和post中文乱码问题/index.html">
 <meta property="og:site_name" content="XU-YH&#39;s Blog">
 <meta property="og:description" content="乱码原因对于国内的程序员来说，在做项目时避免不了的问题是中文乱码问题。Tomcat7及其以下版本对URI默认编码是ISO-8859-1，这种编码方式以单个字节作为一个字符，而汉字是以两个字节表示一个字符的。Tomcat8及其以上版本对URI默认编码是UTF-8，所以get请求和post请求解决中文乱码文题的方法有所不同。 get请求参数中文乱码解决办法如果是Tomcat8及其以上版本，无需解决ge">
 <meta property="og:locale" content="zh-CN">
@@ -242,7 +242,7 @@ name = new String(name.getBytes(&quot;iso-8859-1&quot;),&quot;utf-8&quot;);
     </div>
     
     <footer>
-        <a href="https://xu-yh.github.io">
+        <a href="http://blog.xuyinhui.com">
             <img src="/img/avatar.jpg" alt="XU-YH">
             XU-YH
         </a>
