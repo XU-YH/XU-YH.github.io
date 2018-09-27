@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>git的使用 | XU-YH&#39;s Blog | 醒醒，起床敲代码了！！！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#FF5722">
+    
+    
+    <meta name="keywords" content="git">
+    <meta name="description" content="前言&amp;emsp;&amp;emsp;Git是分布式版本控制系统，CVS及SVN都是集中式的版本控制系统。&amp;emsp;&amp;emsp;集中式版本控制系统，版本库（代码）是集中存放在中央服务器的，工作时，用的都是自己的电脑，所以每个人要先从中央服务器取得最新的版本，然后开始工作，工作结束后，再把自己的代码推送给中央服务器。&amp;emsp;&amp;emsp;分布式版本控制系统没有“中央服务器”，每个人的电脑上都是一个完整的版">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git的使用">
+<meta property="og:url" content="http://blog.xuyinhui.com/2018/09/27/git的使用/index.html">
+<meta property="og:site_name" content="XU-YH&#39;s Blog">
+<meta property="og:description" content="前言&amp;emsp;&amp;emsp;Git是分布式版本控制系统，CVS及SVN都是集中式的版本控制系统。&amp;emsp;&amp;emsp;集中式版本控制系统，版本库（代码）是集中存放在中央服务器的，工作时，用的都是自己的电脑，所以每个人要先从中央服务器取得最新的版本，然后开始工作，工作结束后，再把自己的代码推送给中央服务器。&amp;emsp;&amp;emsp;分布式版本控制系统没有“中央服务器”，每个人的电脑上都是一个完整的版">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://image.xuyinhui.com/18-9-27/git1.jpg">
+<meta property="og:image" content="http://image.xuyinhui.com/18-9-27/git2.png">
+<meta property="og:updated_time" content="2018-09-27T14:28:07.267Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git的使用">
+<meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;Git是分布式版本控制系统，CVS及SVN都是集中式的版本控制系统。&amp;emsp;&amp;emsp;集中式版本控制系统，版本库（代码）是集中存放在中央服务器的，工作时，用的都是自己的电脑，所以每个人要先从中央服务器取得最新的版本，然后开始工作，工作结束后，再把自己的代码推送给中央服务器。&amp;emsp;&amp;emsp;分布式版本控制系统没有“中央服务器”，每个人的电脑上都是一个完整的版">
+<meta name="twitter:image" content="http://image.xuyinhui.com/18-9-27/git1.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="XU-YH&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">XU-YH</h5>
+          <a href="mailto:xuyinhui163@163.com" title="xuyinhui163@163.com" class="mail">xuyinhui163@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/XU-YH" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">git的使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">git的使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-27T12:52:20.000Z" itemprop="datePublished" class="page-time">
+  2018-09-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/study/">study</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用到的git命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">常用到的git命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">git命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#版本回退"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">版本回退</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#工作区和暂存区"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">工作区和暂存区</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#撤销修改"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">撤销修改</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除文件"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">删除文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建与合并分支"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">创建与合并分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决冲突"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">解决冲突</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分支管理策略"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">分支管理策略</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bug分支"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">Bug分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Feature分支"><span class="post-toc-number">3.9.</span> <span class="post-toc-text">Feature分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多人协作"><span class="post-toc-number">3.10.</span> <span class="post-toc-text">多人协作</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结语"><span class="post-toc-number">4.</span> <span class="post-toc-text">结语</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-git的使用"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">git的使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-27 20:52:20" datetime="2018-09-27T12:52:20.000Z"  itemprop="datePublished">2018-09-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/study/">study</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;<strong>Git</strong>是分布式版本控制系统，<strong>CVS</strong>及<strong>SVN</strong>都是集中式的版本控制系统。<br>&emsp;&emsp;集中式版本控制系统，版本库（代码）是集中存放在中央服务器的，工作时，用的都是自己的电脑，所以每个人要先从中央服务器取得最新的版本，然后开始工作，工作结束后，再把自己的代码推送给中央服务器。<br>&emsp;&emsp;分布式版本控制系统没有“中央服务器”，每个人的电脑上都是一个完整的版本库，这样，工作的时候，就不需要联网了，因为版本库就在你自己的电脑上。既然每个人电脑上都有一个完整的版本库，那多个人如何协作呢？比方说你在自己电脑上改了文件A，你的同事也在他的电脑上改了文件A，这时，你们俩之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。<br>&emsp;&emsp;两个有什么不同呢？<br>&emsp;&emsp;<strong>分布式版本控制系统（Git）相较于集中式版本控制系统SVN，<code>Git</code>不需要联网，速度快，安全性高，一旦<code>SVN</code>的中央服务器挂了，所有人都收到了影响，而且<code>Git</code>拥有极其强大的分支管理</strong></p>
+<h2 id="常用到的git命令"><a href="#常用到的git命令" class="headerlink" title="常用到的git命令"></a>常用到的git命令</h2><p>&emsp;&emsp;以下是博主常用到的一些git命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	// 通过git init命令把这个目录变成Git可以管理的仓库</span><br><span class="line">$ git init</span><br><span class="line">	// 显示仓库的当前状态</span><br><span class="line">	// 如果git status告诉你有文件被修改过，用git diff命令可以查看修改内容。</span><br><span class="line">$ git status</span><br><span class="line">	// 与远程仓库相关联	</span><br><span class="line">$ git remote add origin git@github.com:XU-YH/(项目名).git</span><br><span class="line">$ git pull --rebase origin master</span><br><span class="line">	// * 代表所有文件</span><br><span class="line">$ git add * </span><br><span class="line">$ git commit -m &quot;add distributed&quot;</span><br><span class="line">	$ git pull	</span><br><span class="line">$ git push origin branch-name</span><br></pre></td></tr></table></figure>
+<h2 id="git命令"><a href="#git命令" class="headerlink" title="git命令"></a>git命令</h2><h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">	//显示从最近到最远的提交日志</span><br><span class="line">$ git log</span><br><span class="line">	//看到的一大串类似3628164...882e1e0的是commit_id（版本号）（十六进制）</span><br><span class="line">	//简化信息</span><br><span class="line">$ git log --pretty=oneline</span><br><span class="line">	//回退到上一个版本</span><br><span class="line">$ git reset --hard HEAD^		</span><br><span class="line">	//指定回到某个版本，根据版本号找，版本号没必要写全，前几位就可以了</span><br><span class="line">	//HEAD指向哪个版本号，你就把当前版本定位在哪</span><br><span class="line">$ git reset --hard commit_id</span><br><span class="line">	//查看命令历史，以便确定要回到哪个版本</span><br><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
+<h3 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h3><hr>
+<p><div align="center"><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://image.xuyinhui.com/18-9-27/git1.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></div></p>
+<p><strong>管理修改：Git管理的是修改</strong></p>
+<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><hr>
+<p>&emsp;&emsp;文件已修改，未add到暂存区:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 让这个文件回到最近一次git commit或git add时的状态</span><br><span class="line">git checkout -- file</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;文件已修改，并add到暂存区未commit：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD file </span><br><span class="line">git checkout -- file</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;文件已修改，并add到暂存区且commit：<br>版本回退吧</p>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">	//rm命令删除文件</span><br><span class="line">$ rm test.txt</span><br><span class="line">	//删除版本库里的文件</span><br><span class="line">$ git rm test.txt</span><br><span class="line">	//删错了文件，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本</span><br><span class="line">$ git checkout -- test.txt</span><br><span class="line">	//git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</span><br></pre></td></tr></table></figure>
+<h3 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h3><hr>
+<p><div align="center"><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://image.xuyinhui.com/18-9-27/git2.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></div></p>
+<p>&emsp;&emsp;在版本回退里，你已经知道，每次提交，Git都把它们串成一条时间线，这条时间线就是一个分支。<br>&emsp;&emsp;截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即<strong>master</strong>分支。<strong>HEAD</strong>严格来说不是指向提交，而是指向<strong>master</strong>，<strong>master</strong>才是指向提交的，所以，<strong>HEAD</strong>指向的就是当前分支。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">查看分支：git branch</span><br><span class="line">	（当前分支前面会标一个*号）</span><br><span class="line">创建分支：git branch &lt;name&gt;</span><br><span class="line">切换分支：git checkout &lt;name&gt;</span><br><span class="line">创建+切换分支：git checkout -b &lt;name&gt;</span><br><span class="line">合并某分支到当前分支：git merge &lt;name&gt;</span><br><span class="line">删除分支：git branch -d &lt;name&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><hr>
+<p><strong>master</strong>分支和<strong>feature1</strong>分支各自都分别有新的提交，这种情况下，Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge feature1</span><br></pre></td></tr></table></figure>
+<p><strong>存在冲突，必须手动解决冲突后再提交</strong></p>
+<h3 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h3><hr>
+<p>&emsp;&emsp;通常，合并分支时，如果可能，Git会用<strong>Fast forward</strong>模式，但这种模式下，删除分支后，会丢掉分支信息。如果要强制禁用<strong>Fast forward</strong>模式，Git就会在<strong>merge</strong>时生成一个新的<strong>commit</strong>，这样，从分支历史上就可以看出分支信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b dev</span><br><span class="line">	//修改readme.txt文件</span><br><span class="line">$ git add readme.txt</span><br><span class="line">$ git commit -m &quot;add merge&quot;</span><br><span class="line">$ git checkout master</span><br><span class="line">	//合并dev分支，请注意--no-ff参数，表示禁用Fast forward：</span><br><span class="line">$ git merge --no-ff -m &quot;merge with no-ff&quot; dev</span><br></pre></td></tr></table></figure>
+<h3 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h3><hr>
+<p>&emsp;&emsp;软件开发中，每个bug都可以通过一个新的临时分支来修复，修复后，合并分支，然后将临时分支删除。<br>&emsp;&emsp;当手头工作没有完成时，先把工作现场<code>git stash</code>一下，然后去修复bug，修复后，再<code>git stash pop</code>，回到工作现场。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">	（新文件修改后，要先add到stage中，然后再stash)</span><br><span class="line">$ git stash</span><br><span class="line">$ git checkout master</span><br><span class="line">	现在就可以去修改Bug了</span><br><span class="line">	改好了</span><br><span class="line">$ git checkout dev</span><br><span class="line">$ git stash list（查看）</span><br><span class="line">	Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：</span><br><span class="line">	一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；</span><br><span class="line">	另一种方式是用git stash pop，恢复的同时把stash内容也删了</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
+<h3 id="Feature分支"><a href="#Feature分支" class="headerlink" title="Feature分支"></a>Feature分支</h3><hr>
+<p>&emsp;&emsp;开发一个新<code>feature</code>(实验性质的代码)，最好新建一个分支；<br>&emsp;&emsp;如果要丢弃一个没有被合并过的分支，可以通过<code>git branch -D &lt;name&gt;</code>强行删除，如果分支中没有添加新的数据（空的文件）是可以通过<code>git branch -d &lt;name&gt;</code>删除</p>
+<h3 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h3><hr>
+<p>&emsp;&emsp;A：首先，可以试图用<code>git push origin branch-name</code>推送自己的修改；<br>&emsp;&emsp;B：如果推送失败，则因为远程分支比你的本地更新，需要先用<code>git pull</code>试图合并；<br>&emsp;&emsp;C：如果合并有冲突，则解决冲突，并在本地提交；<br>&emsp;&emsp;D：没有冲突或者解决掉冲突后，再用<code>git push origin branch-name</code>推送就能成功！<br>&emsp;&emsp;E：如果<code>git pull</code>提示<strong>“no tracking information”</strong>，则说明本地分支和远程分支的链接关系没有创建，用命令<code>$ git branch --set-upstream-to=origin/branch-name</code>。</p>
+<p>&emsp;&emsp;查看远程库信息，使用<code>git remote -v</code>；<br>&emsp;&emsp;本地新建的分支如果不推送到远程，对其他人就是不可见的；<br>&emsp;&emsp;你的小伙伴要在<strong>dev</strong>分支上开发，就必须创建远程<strong>origin</strong>的<strong>dev</strong>分支到本地，于是他用这个命令创建本地<strong>dev</strong>分支：<code>$ git checkout -b branch-name origin/branch-name</code></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>&emsp;&emsp;这是2017年初次学习git时参照<strong>廖雪峰</strong>老师的博客整理出的学习笔记，学习git命令，常用的命令也不多，博主现在使用<strong>github</strong>提供的pc客户端使用的多，命令行不经常敲就会忘 <strong>-_-</strong>，<a href="https://desktop.github.com/" target="_blank" rel="noopener">GitHub for Windows</a>客户端也非常的好用，也推荐大家使用。</p>
+<hr>
+<p>参考文章地址：</p>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰Git教程</a> </li>
+<li><a href="https://blog.csdn.net/fox9916/article/details/78253714?locationNum=5&amp;fps=1" target="_blank" rel="noopener">git本地项目代码上传至码云远程仓库总结</a> </li>
+<li><a href="https://blog.csdn.net/lindexi_gd/article/details/52554159" target="_blank" rel="noopener">git无法pull仓库refusing to merge unrelated histories</a> </li>
+</ul>
+<hr>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-09-27T14:28:07.267Z" itemprop="dateUpdated">2018-09-27 22:28:07</time>
+</span><br>
+
+
+        
+        如果发现什么问题错误或者不合理的地方，欢迎在下方给我留言  <br>转载请注明：<a href="/2018/09/27/git的使用/" target="_blank" rel="external">http://blog.xuyinhui.com/2018/09/27/git的使用/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://blog.xuyinhui.com">
+            <img src="/img/avatar.jpg" alt="XU-YH">
+            XU-YH
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/09/八达岭长城游记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">八达岭长城游记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ������City�氲װ���� -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zODgxNS8xNTM0Mw==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> Ϊ����ʹ�����������۹����뼤��JavaScript</noscript>
+</div>
+<!-- City�氲װ��������� -->
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        我要吃辣条~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>XU-YH &copy; 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备18044462号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'XU-YH的博客';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
