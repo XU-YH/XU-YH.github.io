@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Spring中的父子容器 | XU-YH&#39;s Blog | 醒醒，起床敲代码了！！！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#FF5722">
+    
+    
+    <meta name="keywords" content="Spring,SSM">
+    <meta name="description" content="前言 &amp;emsp;&amp;emsp;在项目中使用Spring和SpringMVC框架时，三层架构中的controller层可能出现注解没有用，或者SpringMVC前端控制器无法跳转以及事务的配置失效的问题，这些问题就可能是Spring中的父子容器导致的。 概念理解 &amp;emsp;&amp;emsp;首先在Spring中，容器可以有多个，容器之间可能存在上下层关系，也就是父子关系。目前最常见的就是在一个项目中引入">
+<meta name="keywords" content="Spring,SSM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring中的父子容器">
+<meta property="og:url" content="http://blog.xuyinhui.com/2018/10/02/Spring中的父子容器/index.html">
+<meta property="og:site_name" content="XU-YH&#39;s Blog">
+<meta property="og:description" content="前言 &amp;emsp;&amp;emsp;在项目中使用Spring和SpringMVC框架时，三层架构中的controller层可能出现注解没有用，或者SpringMVC前端控制器无法跳转以及事务的配置失效的问题，这些问题就可能是Spring中的父子容器导致的。 概念理解 &amp;emsp;&amp;emsp;首先在Spring中，容器可以有多个，容器之间可能存在上下层关系，也就是父子关系。目前最常见的就是在一个项目中引入">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-02T13:22:58.699Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring中的父子容器">
+<meta name="twitter:description" content="前言 &amp;emsp;&amp;emsp;在项目中使用Spring和SpringMVC框架时，三层架构中的controller层可能出现注解没有用，或者SpringMVC前端控制器无法跳转以及事务的配置失效的问题，这些问题就可能是Spring中的父子容器导致的。 概念理解 &amp;emsp;&amp;emsp;首先在Spring中，容器可以有多个，容器之间可能存在上下层关系，也就是父子关系。目前最常见的就是在一个项目中引入">
+    
+        <link rel="alternate" type="application/atom+xml" title="XU-YH&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">XU-YH</h5>
+          <a href="mailto:xuyinhui163@163.com" title="xuyinhui163@163.com" class="mail">xuyinhui163@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/XU-YH" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Spring中的父子容器</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Spring中的父子容器</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-02T13:19:48.000Z" itemprop="datePublished" class="page-time">
+  2018-10-02
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/study/">study</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概念理解"><span class="post-toc-number">2.</span> <span class="post-toc-text">概念理解</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体分析"><span class="post-toc-number">3.</span> <span class="post-toc-text">具体分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Spring中的父子容器"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Spring中的父子容器</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-02 21:19:48" datetime="2018-10-02T13:19:48.000Z"  itemprop="datePublished">2018-10-02</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/study/">study</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p>&emsp;&emsp;在项目中使用<strong>Spring</strong>和<strong>SpringMVC</strong>框架时，三层架构中的<code>controller</code>层可能出现注解没有用，或者<code>SpringMVC</code>前端控制器无法跳转以及事务的配置失效的问题，这些问题就可能是<strong>Spring</strong>中的父子容器导致的。</p>
+<h2 id="概念理解"><a href="#概念理解" class="headerlink" title="概念理解"></a>概念理解</h2><hr>
+<p>&emsp;&emsp;首先在<strong>Spring</strong>中，容器可以有多个，容器之间可能存在上下层关系，也就是父子关系。目前最常见的就是在一个项目中引入<strong>Spring</strong>和<strong>SpringMVC</strong>这两个框架，这两个框架就是两个容器。</p>
+<p>&emsp;&emsp;<strong>Spring</strong>容器  –  父容器<br>&emsp;&emsp;<strong>SpringMVC</strong>容器  – 子容器</p>
+<p><strong>父子容器的关系：</strong></p>
+<ul>
+<li><strong>子容器能够访问父容器的资源（bean）</strong><br>&emsp;&emsp;示例：Controller可以注入Service</li>
+<li><strong>父容器不能访问子容器的资源（bean）</strong></li>
+</ul>
+<h2 id="具体分析"><a href="#具体分析" class="headerlink" title="具体分析"></a>具体分析</h2><hr>
+<p>&emsp;&emsp;使用注解开发，在<strong>Spring</strong>框架的配置文件<code>applicationContext.xml</code>中添加下面这句话扫描所有的包，<strong>Spring</strong>容器加载时会将被<code>@Component</code>注解的类自动注册到容器中，<code>@Controller</code>，<code>@Service</code>，<code>@Respository</code>这三个注解继承于<code>@Component</code>，并且会扫描类中的<code>@Required</code>、<code>@Autowired</code>、<code>@Resource</code>等注解。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 配置扫描 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.xuyinhui"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;在<strong>SpringMVC</strong>框架的配置文件<code>springmvc.xml</code>中的必写配置，它声明了<code>@RequestMapping</code>、<code>@RequestBody</code>、<code>@ResponseBody</code>等一些默认配置。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 注册驱动 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;当<strong>SpringMVC</strong>初始化时，会自动寻找<strong>SpringMVC</strong>容器中的所有使用了<code>@Controller</code>注解的<code>bean</code>，来确定是否需要一个<code>handler</code>。如果按照上面的配置，<strong>SpringMVC</strong>容器中是没有带有<code>@Controller</code>注解的<code>bean</code>的，全都注册在<strong>Spring</strong>父容器中，所以<strong>SpringMVC</strong>找不到处理器，因此就会出现前端控制器失效，无法进行跳转的问题。</p>
+<p>&emsp;&emsp;<strong>注意：使用@Value获取配置文件的值时</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设从image.properties配置文件中获取图片地址</span></span><br><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;IMAGE_URL&#125;"</span>)</span><br><span class="line"><span class="keyword">private</span> String IMAGE_URL;</span><br></pre></td></tr></table></figure>
+<p>在<strong>Spring</strong>容器初始化（所有的bean）之后，再从<strong>当前的所在容器中</strong>获取值，然后注入。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr>
+<p>&emsp;&emsp;理解<strong>Spring</strong>和<strong>SpringMVC</strong>的父子容器关系后，在这里官方也建议我们把不同类型的<code>Bean</code>分配到不同的容器中进行管理。这样就可以避免<code>Bean</code>找不到或者<strong>SpringMVC</strong>不能跳转以及事务的配置失效的问题了。如以下配置：</p>
+<p>&emsp;&emsp;在<strong>SpringMVC</strong>框架配置文件<code>springmvc.xml</code>中</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 配置controller扫描包 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.xuyinhui.controller"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;在<strong>Spring</strong>框架配置文件<code>applicationContext.xml</code>中</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 配置Mapper扫描，动态代理 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.mybatis.spring.mapper.MapperScannerConfigurer"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 配置Mapper扫描包 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"basePackage"</span> <span class="attr">value</span>=<span class="string">"com.xuyinhui.dao"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 配置service扫描 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.xuyinhui.service"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-10-02T13:22:58.699Z" itemprop="dateUpdated">2018-10-02 21:22:58</time>
+</span><br>
+
+
+        
+        如果发现什么问题错误或者不合理的地方，欢迎在下方给我留言  <br>转载请注明：<a href="/2018/10/02/Spring中的父子容器/" target="_blank" rel="external">http://blog.xuyinhui.com/2018/10/02/Spring中的父子容器/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://blog.xuyinhui.com">
+            <img src="/img/avatar.jpg" alt="XU-YH">
+            XU-YH
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/">SSM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/27/git的使用/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">git的使用</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ������City�氲װ���� -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zODgxNS8xNTM0Mw==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> Ϊ����ʹ�����������۹����뼤��JavaScript</noscript>
+</div>
+<!-- City�氲װ��������� -->
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        我要吃辣条~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>XU-YH &copy; 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备18044462号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'XU-YH的博客';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
