@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.xuyinhui.com/2019/02/26/hello-world/</loc>
+    
+    <lastmod>2019-11-18T14:44:44.643Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.xuyinhui.com/2019/11/18/Windows-MySQL%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
+    
+    <lastmod>2019-11-18T14:36:50.366Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.xuyinhui.com/2019/09/28/%E7%AE%97%E6%B3%95%E4%B9%8B%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/</loc>
     
     <lastmod>2019-09-28T17:07:32.177Z</lastmod>
@@ -75,13 +89,6 @@
     <loc>http://blog.xuyinhui.com/tags/index.html</loc>
     
     <lastmod>2018-08-11T08:30:20.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.xuyinhui.com/2019/02/26/hello-world/</loc>
-    
-    <lastmod>2018-08-11T05:41:48.000Z</lastmod>
     
   </url>
   

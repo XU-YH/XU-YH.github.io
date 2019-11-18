@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Windows-MySQL安装配置 | XU-YH&#39;s Blog | 醒醒，起床敲代码了！！！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#FF5722">
+    
+    
+    <meta name="keywords" content="mysql">
+    <meta name="description" content="1、MySQL解压版安装新建一个my.ini文件，放在MySQL解压后的根目录下 1234567891011121314151617[client]# 设置mysql客户端默认字符集default-character-set=utf8 [mysqld]# 设置3306端口port = 3306# 设置mysql的安装目录basedir=D:\LearningSoftware\mysql-5.7.2">
+<meta name="keywords" content="mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows-MySQL安装配置">
+<meta property="og:url" content="http://blog.xuyinhui.com/2019/11/18/Windows-MySQL安装配置/index.html">
+<meta property="og:site_name" content="XU-YH&#39;s Blog">
+<meta property="og:description" content="1、MySQL解压版安装新建一个my.ini文件，放在MySQL解压后的根目录下 1234567891011121314151617[client]# 设置mysql客户端默认字符集default-character-set=utf8 [mysqld]# 设置3306端口port = 3306# 设置mysql的安装目录basedir=D:\LearningSoftware\mysql-5.7.2">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-18T14:36:50.366Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows-MySQL安装配置">
+<meta name="twitter:description" content="1、MySQL解压版安装新建一个my.ini文件，放在MySQL解压后的根目录下 1234567891011121314151617[client]# 设置mysql客户端默认字符集default-character-set=utf8 [mysqld]# 设置3306端口port = 3306# 设置mysql的安装目录basedir=D:\LearningSoftware\mysql-5.7.2">
+    
+        <link rel="alternate" type="application/atom+xml" title="XU-YH&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">XU-YH</h5>
+          <a href="mailto:xuyinhui163@163.com" title="xuyinhui163@163.com" class="mail">xuyinhui163@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/XU-YH" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Windows-MySQL安装配置</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Windows-MySQL安装配置</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-18T14:32:20.000Z" itemprop="datePublished" class="page-time">
+  2019-11-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/study/">study</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1、MySQL解压版安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">1、MySQL解压版安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2、MySQL添加新用户"><span class="post-toc-number">2.</span> <span class="post-toc-text">2、MySQL添加新用户</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、以root用户登录"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1、以root用户登录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2、添加新用户并赋予权限"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2、添加新用户并赋予权限</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Windows-MySQL安装配置"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Windows-MySQL安装配置</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-18 22:32:20" datetime="2019-11-18T14:32:20.000Z"  itemprop="datePublished">2019-11-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/study/">study</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="1、MySQL解压版安装"><a href="#1、MySQL解压版安装" class="headerlink" title="1、MySQL解压版安装"></a>1、MySQL解压版安装</h2><p>新建一个my.ini文件，放在MySQL解压后的根目录下</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[client]</span></span><br><span class="line"><span class="comment"># 设置mysql客户端默认字符集</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8</span><br><span class="line"> </span><br><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="comment"># 设置3306端口</span></span><br><span class="line"><span class="attr">port</span> = <span class="number">3306</span></span><br><span class="line"><span class="comment"># 设置mysql的安装目录</span></span><br><span class="line"><span class="attr">basedir</span>=D:\LearningSoftware\mysql-<span class="number">5.7</span>.<span class="number">25</span>-winx64</span><br><span class="line"><span class="comment"># 设置 mysql数据库的数据的存放目录，MySQL 8+ 不需要以下配置，系统自己生成即可，否则有可能报错</span></span><br><span class="line"><span class="attr">datadir</span>=D:\LearningSoftware\mysql-<span class="number">5.7</span>.<span class="number">25</span>-winx64\data</span><br><span class="line"><span class="comment"># 允许最大连接数</span></span><br><span class="line"><span class="attr">max_connections</span>=<span class="number">200</span></span><br><span class="line"><span class="comment"># 服务端使用的字符集默认为8比特编码的latin1字符集</span></span><br><span class="line"><span class="attr">character-set-server</span>=utf8</span><br><span class="line"><span class="comment"># 创建新表时将使用的默认存储引擎</span></span><br><span class="line"><span class="attr">default-storage-engine</span>=INNODB</span><br></pre></td></tr></table></figure>
+<p>Windows可以将MySQL的bin目录添加到path环境变量中。</p>
+<p>在MySQL的bin目录下运行cmd命令行，执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#初始化mysql，生成data目录。默认root用户无密码</span><br><span class="line">mysqld --initialize-insecure --user=mysql</span><br><span class="line">	#窗口会输出root用户的初始密码，[Server] A temporary password is generated for root@localhost: APWCY5ws&amp;hjQ</span><br><span class="line">mysqld --initialize --console</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#安装MySQL</span><br><span class="line">mysqld --install</span><br><span class="line">#启动MySQL服务</span><br><span class="line">net start mysql</span><br><span class="line">#修改root密码</span><br><span class="line">mysqladmin -u root password 新密码</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#登录</span><br><span class="line">#-h：MySQL地址（本地可省略），-P：端口（3306可省略），-u：用户名，-p：密码</span><br><span class="line">mysql -h localhost -P3315 -u root -p</span><br><span class="line"></span><br><span class="line">#查看MySQL端口号</span><br><span class="line">show global variables like &apos;port&apos;;</span><br></pre></td></tr></table></figure>
+<h2 id="2、MySQL添加新用户"><a href="#2、MySQL添加新用户" class="headerlink" title="2、MySQL添加新用户"></a>2、MySQL添加新用户</h2><h3 id="1、以root用户登录"><a href="#1、以root用户登录" class="headerlink" title="1、以root用户登录"></a>1、以root用户登录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<h3 id="2、添加新用户并赋予权限"><a href="#2、添加新用户并赋予权限" class="headerlink" title="2、添加新用户并赋予权限"></a>2、添加新用户并赋予权限</h3><ol>
+<li><p><strong>在mysql数据库下的user表新增新用户（不建议）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">select * from user;</span><br><span class="line">#添加用户的的实例，用户名为guest，密码为guest123，并授权用户可进行 SELECT, INSERT 和 UPDATE操作权限</span><br><span class="line">INSERT INTO user </span><br><span class="line">          (host, user, password, </span><br><span class="line">           select_priv, insert_priv, update_priv) </span><br><span class="line">           VALUES (&apos;localhost&apos;, &apos;guest&apos;, </span><br><span class="line">           PASSWORD(&apos;guest123&apos;), &apos;Y&apos;, &apos;Y&apos;, &apos;Y&apos;);</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使用SQL的 GRANT 命令 </strong></p>
+<p><strong>创建用户：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#命令：</span><br><span class="line">CREATE USER ‘username’@‘host’ IDENTIFIED BY ‘password’;</span><br><span class="line">#说明：</span><br><span class="line">#username：你创建用户的用户名</span><br><span class="line">#host：指定该用户的主机地址，本地用户可用‘localhost’（127.0.0.1）。如果想让该用户可以从任何远程主机上登录，可使用通配符“%”。</span><br><span class="line">#password：该用户的登录密码，可以为空。</span><br><span class="line"></span><br><span class="line">#eg：</span><br><span class="line">CREATE USER ‘student’@‘localhost’ IDENTIFIED BY ‘123456’;</span><br><span class="line">CREATE USER ‘student’@’%’ IDENTIFIED BY ‘123456’;</span><br></pre></td></tr></table></figure>
+<p><strong>分配权限：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#命令：</span><br><span class="line">GRANT privileges ON database.tablename TO ‘username’@‘host’;</span><br><span class="line">#说明：</span><br><span class="line">#privileges ：用户的操作权限如：select，update，delete，insert等，若要授予所有权则使用“all”。</span><br><span class="line">#database：数据库名</span><br><span class="line">#tablename ：表明</span><br><span class="line">#			数据库名.*           数据库中的所有</span><br><span class="line">#           数据库名.表          指定数据库中的某张表</span><br><span class="line">#           数据库名.存储过程     指定数据库中的存储过程</span><br><span class="line">#           *.*                所有数据库</span><br><span class="line">#eg：</span><br><span class="line">GRANT all ON student. TO ‘student’@‘localhost’;</span><br><span class="line"></span><br><span class="line">#使用下面这条命令可以让创建的用户获得授权的权利：</span><br><span class="line">GRANT privileges ON database.tablename TO ‘username’@‘host’ WITH GRANT OPTION;</span><br><span class="line"></span><br><span class="line">#刷新权限</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"></span><br><span class="line">#查看权限</span><br><span class="line">show grants for &apos;用户&apos;@&apos;IP地址&apos;;</span><br></pre></td></tr></table></figure>
+<p><strong>收回权限：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">REVOKE privileges ON database.tablename FROM ‘username’@‘host’;</span><br><span class="line">#说明：</span><br><span class="line">#privileges ：用户的操作权限如：select，update，delete，insert等，若要授予所有权则使用“all”。</span><br></pre></td></tr></table></figure>
+<p><strong>删除用户：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop user &apos;用户名&apos;@&apos;IP地址&apos;;</span><br></pre></td></tr></table></figure>
+<p><strong>修改密码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SET PASSWORD FOR ‘username’@‘host’ = PASSWORD(‘newpassword’);</span><br><span class="line"></span><br><span class="line">#如果是修改对当前用户的密码：</span><br><span class="line">SET PASSWORD = PASSWORD(‘newpassword’);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-18T14:36:50.366Z" itemprop="dateUpdated">2019-11-18 22:36:50</time>
+</span><br>
+
+
+        
+        如果发现什么问题错误或者不合理的地方，欢迎在下方给我留言  <br>转载请注明：<a href="/2019/11/18/Windows-MySQL安装配置/" target="_blank" rel="external">http://blog.xuyinhui.com/2019/11/18/Windows-MySQL安装配置/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://blog.xuyinhui.com">
+            <img src="/img/avatar.jpg" alt="XU-YH">
+            XU-YH
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/28/算法之交换排序/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">算法之交换排序</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ������City�氲װ���� -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zODgxNS8xNTM0Mw==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> Ϊ����ʹ�����������۹����뼤��JavaScript</noscript>
+</div>
+<!-- City�氲װ��������� -->
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        我要吃辣条~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>XU-YH &copy; 2018 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备18044462号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'XU-YH的博客';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
