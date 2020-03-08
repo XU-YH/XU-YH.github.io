@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.xuyinhui.com/"/>
-  <updated>2020-03-08T15:56:58.432Z</updated>
+  <updated>2020-03-08T16:01:03.180Z</updated>
   <id>http://blog.xuyinhui.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux的简单使用</title>
+    <link href="http://blog.xuyinhui.com/2020/03/08/Linux%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
+    <id>http://blog.xuyinhui.com/2020/03/08/Linux的简单使用/</id>
+    <published>2020-03-08T15:59:18.000Z</published>
+    <updated>2020-03-08T16:01:03.180Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="处理目录"><a href="#处理目录" class="headerlink" title="处理目录"></a>处理目录</h3><p><strong>ls</strong>: 列出目录</p><p><strong>cd</strong>：切换目录</p><p><strong>pwd</strong>：显示目前的目录</p><p><strong>mkdir</strong>：创建一个新的目录</p><p><strong>rmdir</strong>：删除一个空的目录</p><p><strong>cp</strong>: 复制文件或目录</p><p><strong>rm</strong>: 移除文件或目录</p><p><strong>mv</strong>: 移动文件与目录，或修改文件与目录的名称</p><h3 id="文件内容查看"><a href="#文件内容查看" class="headerlink" title="文件内容查看"></a>文件内容查看</h3><p><strong>cat</strong> 由第一行开始显示文件内容</p><p><strong>tac</strong> 从最后一行开始显示，可以看出 tac 是 cat 的倒著写！</p><p><strong>nl</strong>  显示的时候，顺道输出行号！</p><p><strong>more</strong> 一页一页的显示文件内容</p><p><strong>less</strong> 与 more 类似，但是比 more 更好的是，他可以往前翻页！</p><p><strong>head</strong> 只看头几行</p><p><strong>tail</strong> 只看尾巴几行</p><p>​    tail [-n number] 文件 </p><p>​    -n ：后面接数字，代表显示几行的意思</p><p>​    -f ：表示持续侦测后面所接的档名，要等到按下[ctrl]-c才会结束tail的侦测</p><h3 id="vi-vim-使用"><a href="#vi-vim-使用" class="headerlink" title="vi/vim 使用"></a>vi/vim 使用</h3><p><img src="C:\Users\不知\Desktop\vim-vi-workmodel.png" style="zoom: 67%;"></p><table><thead><tr><th></th><th>指令行的储存、离开等指令</th></tr></thead><tbody><tr><td>:w</td><td>将编辑的数据写入硬盘档案中(常用)</td></tr><tr><td>:w!</td><td>若文件属性为『只读』时，强制写入该档案。不过，到底能不能写入， 还是跟你对该档案的档案权限有关啊！</td></tr><tr><td>:q</td><td>离开 vi (常用)</td></tr><tr><td>:q!</td><td>若曾修改过档案，又不想储存，使用 ! 为强制离开不储存档案。</td></tr><tr><td>:wq</td><td>储存后离开，若为 :wq! 则为强制储存后离开 (常用)</td></tr></tbody></table><h3 id="yum命令"><a href="#yum命令" class="headerlink" title="yum命令"></a>yum命令</h3><p> yum 基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum [options] [command] [package ...]</span><br></pre></td></tr></table></figure><ul><li><strong>options：</strong>可选，选项包括-h（帮助），-y（当安装过程提示选择全部为”yes”），-q（不显示安装的过程）等等。</li><li><strong>command：</strong>要进行的操作。</li><li><strong>package</strong>操作的对象。</li></ul><p>常用命令：</p><ul><li>1.列出所有可更新的软件清单命令：yum check-update</li><li>2.更新所有软件命令：yum update</li><li>3.仅安装指定的软件命令：yum install &lt;package_name&gt;</li><li>4.仅更新指定的软件命令：yum update &lt;package_name&gt;</li><li>5.列出所有可安裝的软件清单命令：yum list</li><li>6.删除软件包命令：yum remove &lt;package_name&gt;</li><li>7.查找软件包 命令：yum search <keyword></keyword></li></ul><h3 id="进程命令"><a href="#进程命令" class="headerlink" title="进程命令"></a>进程命令</h3><p> <strong>ps命令</strong> ：ps -aux|grep java<br>① 查看所有进程：ps -A<br>② 列出不和本终端有关的进程：ps -a<br>③ 列出有效使用者相关的进程：ps -u<br>④ 显示包含其他使用者的进程：ps aux </p><p>参数：<br> USER 进程拥有者<br> PID 进程ID<br> CPU 占用CPU使用率<br> MEM 占用内存使用率<br> VSZ 占用虚拟内存大小<br> RSS 占用内存大小<br> TTY 运行终端的号码<br> STAT 进程状态（D不可中断、R运行中、S休眠、T暂停、Z僵尸进程、W没有足够内存可分配、&lt;高优先级进程、N低优先级进程）<br> START 进程开始时间<br> TIME 累计使用CPU时间<br> COMMAND 执行命令</p><p><strong>top命令：实时监控系统的状态</strong></p><p>PID：进程id；<br> USER：进程拥有者；<br> PR：进程优先级；<br> NI：负值表示高优先级，正值表示低优先级；<br> VIRT：进程使用的虚拟内存总量，单位kb，VIRT = SWAP+RES；<br> RES：进程使用的未被换出的物理内存大小，单位kb，RES=CODE + DATA；<br> SHR：共享内存大小，单位kb；<br> %CPU：上次更新到现在的CPU时间占用百分比；<br> %MEM：进程使用的物理内存百分比；<br> TIME+：进程使用的CPU时间总计，单位为1/100秒；<br> COMMAND：进程名称（命令名 / 命令行）；</p><p><strong>进程的终止</strong></p><ol><li>kill -1 PID 重启服务</li><li>kill -9 PID 强行杀死进程</li><li>kill -15 PID 正常结束</li></ol><h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>reboot：重启系统<br>mount /dev/cdrom /mnt ：重新挂载光盘</p><p>free：显示系统内存使用情况，，free -h</p><p>./usr/local/nginx/sbin/nginx</p><p>nginx -s stop</p><p>nginx -s reload</p><h2 id="Linux目录结构"><a href="#Linux目录结构" class="headerlink" title="Linux目录结构"></a><strong>Linux目录结构</strong></h2><p><strong>系统启动必须：</strong></p><ul><li><p><strong>/boot：</strong>存放的启动Linux 时使用的内核文件，包括连接文件以及镜像文件。</p></li><li><p><strong>/etc：</strong>存放<strong>所有</strong>的系统需要的<strong>配置文件</strong>和<strong>子目录列表，</strong>更改目录下的文件可能会导致系统不能启动。</p></li><li><p><strong>/lib</strong>：存放基本代码库（比如c++库），其作用类似于Windows里的DLL文件。几乎所有的应用程序都需要用到这些共享库。</p></li><li><p><strong>/sys</strong>： 这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。sysfs文件系统集成了下面3种文件系统的信息：针对进程信息的proc文件系统、针对设备的devfs文件系统以及针对伪终端的devpts文件系统。该文件系统是内核设备树的一个直观反映。当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中</p></li></ul><p><strong>指令集合：</strong></p><ul><li><p><strong>/bin：</strong>存放着最常用的程序和指令</p></li><li><p><strong>/sbin：</strong>只有系统管理员能使用的程序和指令。</p></li></ul><p><strong>外部文件管理：</strong></p><ul><li><p><strong>/dev ：</strong>Device(设备)的缩写, 存放的是Linux的外部设备。<strong>注意：</strong>在Linux中访问设备和访问文件的方式是相同的。</p></li><li><p><strong>/media</strong>：类windows的<strong>其他设备，</strong>例如U盘、光驱等等，识别后linux会把设备放到这个目录下。</p></li><li><p><strong>/mnt</strong>：临时挂载别的文件系统的，我们可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。</p></li></ul><p><strong>临时文件：</strong></p><ul><li><p><strong>/run</strong>：是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 /var/run 目录，应该让它指向 run。</p></li><li><p><strong>/lost+found</strong>：一般情况下为空的，系统非法关机后，这里就存放一些文件。</p></li><li><p><strong>/tmp</strong>：这个目录是用来存放一些临时文件的。</p></li></ul><p><strong>账户：</strong></p><ul><li><p><strong>/root</strong>：系统管理员的用户主目录。</p></li><li><p><strong>/home</strong>：用户的主目录，以用户的账号命名的。</p></li><li><p><strong>/usr</strong>：用户的很多应用程序和文件都放在这个目录下，类似于windows下的program files目录。</p></li><li><p><strong>/usr/bin：</strong>系统用户使用的应用程序与指令。</p></li><li><p><strong>/usr/sbin：</strong>超级用户使用的比较高级的管理程序和系统守护程序。</p></li><li><p><strong>/usr/src：</strong>内核源代码默认的放置目录。</p></li></ul><p><strong>运行过程中要用：</strong></p><ul><li><p><strong>/var</strong>：存放经常修改的数据，比如程序运行的日志文件（/var/log 目录下）。</p></li><li><p><strong>/proc</strong>：管理<strong>内存空间！</strong>虚拟的目录，是系统内存的映射，我们可以直接访问这个目录来，获取系统信息。这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件来做修改。</p></li></ul><p><strong>扩展用的：</strong></p><ul><li><p><strong>/opt</strong>：默认是空的，我们安装额外软件可以放在这个里面。</p></li><li><p><strong>/srv</strong>：存放服务启动后需要提取的数据<strong>（不用服务器就是空）</strong></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h2&gt;&lt;h3 id=&quot;处理目录&quot;&gt;&lt;a href=&quot;#处理目录&quot; class=&quot;headerlink&quot; title=&quot;处理目录&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+      <category term="study" scheme="http://blog.xuyinhui.com/categories/study/"/>
+    
+    
+      <category term="Linux" scheme="http://blog.xuyinhui.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>单表去重sql</title>
